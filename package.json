@@ -1,0 +1,27 @@
+{
+  "name": "json-xls",
+  "version": "1.0.0",
+  "description": "A JSON and Excel experiment",
+  "main": "dist/sources/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauravmahto/json-xls.git"
+  },
+  "author": "Gaurav Mahto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gauravmahto/json-xls/issues"
+  },
+  "homepage": "https://github.com/gauravmahto/json-xls#readme",
+  "dependencies": {
+    "app-module-path": "2.2.0",
+    "xlsx": "0.13.3"
+  },
+  "devDependencies": {
+    "@types/node": "10.5.7",
+    "typescript": "3.0.1"
+  }
+}

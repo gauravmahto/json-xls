@@ -1,0 +1,30 @@
+{
+  "excelSheet": "test.xlsx",
+  "langSheetName": "Strings",
+  "outFile": "lang.json",
+  "startRows": [
+    4,
+    12,
+    14,
+    18
+  ],
+  "endRows": [
+    10,
+    12,
+    15,
+    18
+  ],
+  "primaryLang": "en-US",
+  "langMap": {
+    "A": "en-US",
+    "K": "da-DK",
+    "J": "de-DE",
+    "I": "es-ES",
+    "H": "fi-FI",
+    "G": "fr-FR",
+    "F": "it-IT",
+    "D": "nb-NO",
+    "E": "nl-NL",
+    "L": "sv-SE"
+  }
+}
