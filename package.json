@@ -1,9 +1,12 @@
 {
   "name": "json-xls",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A JSON and Excel experiment",
   "main": "dist/sources/app.js",
   "scripts": {
+    "build": "npx tsc",
+    "watch": "npx tsc -w",
+    "extract-localized-strings": "node dist/sources/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
