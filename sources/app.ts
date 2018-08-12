@@ -5,30 +5,45 @@
 // Patch the path.
 import './globals';
 
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { extractLocalizedStringsIntoAFile } from 'sources/main/actions';
+import { getArgKeyVal, log } from 'sources/utilities';
 
-import options from 'sources/config/config.json';
-import { getLangSheet, getResult } from 'sources/extract';
-import { getAsJSON } from 'sources/utils';
+const supportedProgramArgs = {
+  ACTION: 'action'
+};
 
-const log = console;
-
-let fileData;
-try {
-
-  fileData = getResult(getLangSheet(options), options);
-  fileData = getAsJSON(fileData);
-
-} catch (err) {
-
-  log.error('Error:', err.message);
-
+enum actions {
+  extractLocalizedStrings = 'extractLS'
 }
 
-// Write JSON file.
-if (typeof fileData !== 'undefined') {
+const args: string[] = [];
+// See, https://nodejs.org/docs/latest/api/all.html#modules_accessing_the_main_module
+if (require.main === module) {
 
-  writeFileSync(join(global.PROJECT_DIST, options.outFile), fileData);
+  // Called directly from CLI.
+  args.push(...process.argv.slice(2));
+
+} else {
+  // Required by another module.
+}
+
+const action = getArgKeyVal(supportedProgramArgs.ACTION, args).val;
+
+if (typeof action === 'undefined') {
+
+  log.error('Please provide the action argument.');
+
+} else {
+
+  switch (action) {
+
+    case actions.extractLocalizedStrings:
+      extractLocalizedStringsIntoAFile();
+      break;
+
+    default:
+      log.error('Invalid action provided.');
+
+  }
 
 }

@@ -1,5 +1,6 @@
 # Ignore ./node_modules dir
 **/node_modules
 
-# Ignore ./bin dir
+# Ignore non-source dirs
 dist
+.history
