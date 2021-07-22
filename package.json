@@ -21,7 +21,7 @@
   "homepage": "https://github.com/gauravmahto/json-xls#readme",
   "dependencies": {
     "app-module-path": "2.2.0",
-    "xlsx": "0.13.3"
+    "xlsx": "0.17.0"
   },
   "devDependencies": {
     "@types/node": "10.5.7",
